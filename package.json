@@ -2,7 +2,7 @@
   "name": "learning_react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://ramonmedeiros.github.io/learning_react",
+  "homepage": "https://ramonmedeiros.github.io/learning_react",
   "dependencies": {
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
