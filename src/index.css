@@ -15,13 +15,14 @@ ol, ul {
 
 .status {
   margin-bottom: 10px;
+  font-size: 40px;
 }
 
 .square {
   background: #fff;
   border: 1px solid #999;
   float: left;
-  font-size: 60px;
+  font-size: 40px;
   font-weight: bold;
   line-height: 34px;
   height: 100px;

@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import Confetti from 'react-dom-confetti';
+
 
 function Square(props) {
   return (
@@ -93,10 +95,26 @@ class Game extends React.Component {
                   player: this.nextPlayer(this.state.history[move]["player"])})
   }
   render() {
+    const config = {
+      angle: 90,
+      spread: 45,
+      startVelocity: 45,
+      elementCount: 50,
+      dragFriction: 0.1,
+      duration: 3000,
+      stagger: 0,
+      width: "10px",
+      height: "10px",
+      colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
+    };
     const winner = calculateWinner(this.generateSquare());
     let status;
+    let confeti;
+
     if (winner) {
       status = 'Winner: ' + winner;
+      confeti = true;
+      
     } else {
       status = 'Next player:' + this.nextPlayer(this.state.player);
     }
@@ -108,13 +126,14 @@ class Game extends React.Component {
 
     return (
       <div className="game">
+        <Confetti active={confeti} config={ config } />
         <div className="game-board">
           <Board 
             squares={this.generateSquare()} 
             onClick={(i) => this.handleClick(i)}/>
         </div>
         <div className="game-info">
-          <div>{status}</div>
+          <div className="status">{status}</div>
           <ol>{moves}</ol>
         </div>
       </div>
