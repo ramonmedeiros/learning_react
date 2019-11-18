@@ -54,6 +54,10 @@ class Game extends React.Component {
       return;
     }
 
+    // check if square was already filled
+    if (this.generateSquare()[i] != null) {
+      return;
+    }
 
     this.setState({player: this.nextPlayer(this.state.player),
                   history: this.state.history.concat({"player": this.state.player,
